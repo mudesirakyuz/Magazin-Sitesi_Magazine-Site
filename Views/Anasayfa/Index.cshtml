@@ -1,0 +1,73 @@
+﻿@model Megazinde.Models.Siniflar.anasayfaClass
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SiteMasterPageLayout.cshtml";
+}
+
+<div id="colorlib-page">
+    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+
+
+    <div id="colorlib-main">
+        <aside id="colorlib-hero" class="js-fullheight">
+            <div class="flexslider js-fullheight">
+                <ul class="slides">
+                    @foreach (var head in Model.csHead)
+                    {
+                        <li style="background-image:url(../araclar/images/@head.resim);">
+
+                            <div class="overlay"></div>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-12 js-fullheight slider-text">
+                                        <div class="slider-text-inner">
+                                            <div class="desc">
+                                                <p class="tag">
+                                                    <span>@head.Kategorilers.kategori</span>
+                                                </p>
+                                                <h1><a> @head.baslik </a></h1>
+                                                <p>@head.icerik</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </aside>
+
+        <div class="colorlib-blog">
+            <div class="container-wrap">
+                <div class="row">
+                    @foreach (var haber in Model.csHaberlerIndex)
+                    {
+                        <div class="col-md-6">
+                            <div class="blog-entry animate-box">
+                                <div class="blog-img" style="background-image: url(../araclar/images/@haber.resim);">
+                                    <div class="desc text-center">
+                                        <p class="tag"><span>@haber.Kategorilers.kategori</span></p>
+                                        <h2 class="head-article"><a href="/Anasayfa/KategoriOnizleme/@haber.Kategorilers.kategori_id">@haber.baslik</a></h2>
+                                        <p>@haber.icerik</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+                        <ul class="pagination" style="padding-left:500px;padding-right:500px;">
+                            <li><a href="#"><hr class="fa-pagelines" />Başa Dön<hr class="fa-pagelines" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,50 @@
+﻿@using Megazinde.Models.DB.DbFirst
+@model List<Haberlers>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-active">
+    <tr>
+        <th>ID</th>
+        <th>BAŞLIK</th>
+        <th>İÇERİK</th>
+        <th>KATEGORİ</th>
+        <th>RESİM</th>
+        <th>SİL</th>
+        <th>GUNCELLE</th>
+    </tr>
+    <tbody>
+        @foreach (var haber in Model)
+        {
+            <tr>
+                <th>@haber.h_id</th>
+                <td>@haber.baslik</td>
+                <td>@haber.icerik</td>
+                <td>@haber.Kategorilers.kategori</td>
+                <td>@haber.resim</td>
+                <td><a href="/AHaberEditoru/HaberSil?id=@haber.h_id&kategori=@haber.Kategoriler_kategori_id&resim=@haber.resim" class="btn btn-danger">SİL</a></td>
+                <td><a href="/AHaberEditoru/HaberGuncelle?id=@haber.h_id&kategori=@haber.Kategoriler_kategori_id&resim=@haber.resim" class="btn btn-success">GÜNCELLE</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<br />
+<center><a href="/AHaberEditoru/HaberEkle" class="btn btn-info">YENİ HABER EKLE</a></center>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+

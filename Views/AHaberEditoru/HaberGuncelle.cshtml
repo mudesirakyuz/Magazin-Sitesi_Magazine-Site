@@ -1,0 +1,297 @@
+﻿@model Megazinde.Models.Siniflar.adminClass
+@{
+    ViewBag.Title = "HaberGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<center><label style="font-style:italic;font-size:20pt; color:darkcyan">Haber Güncelle</label></center>
+<div>
+    <center>
+        <table class="table table-bordered" style="background-color:darkcyan;height:3px; width:1000px;"></table>
+    </center>
+
+</div>
+<br />
+<br />
+
+<form class="form-group" method="post">
+    @if (ViewBag.kategori == 1)
+    {
+        foreach (var item in Model.csHaberlerModa)
+        {
+            <div class="form-group"><input type="text" style="width:0px; opacity:0%; border-color:white; background-color:white;" name="h_moda_id" value="@item.h_moda_id" /><br /></div>
+
+            <div class="form-group"><label>BAŞLIK</label><br /><input type="text" class="form-control" name="baslik" value="@item.baslik" placeholder="Haberin başlığını yazınız..." required /><br /></div>
+            <div class="form-group"><label>İÇERİK 1:</label><br /><textarea name="icerik" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin ilk içeriğini yazınız..." required>@item.icerik</textarea><br /></div>
+            <div class="form-group"><label>İÇERİK 2:</label><br /><textarea name="icerik1" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin orta içeriğini yazınız..." required>@item.icerik1</textarea><br /></div>
+            <div class="form-group"><label>İÇERİK 3:</label><br /><textarea name="icerik2" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin son içeriğini yazınız..." required>@item.icerik2</textarea><br /></div>
+
+            <div class="form-group">
+                <label>KATEGORİ:</label><br />
+                <select name="Kategoriler_kategori_id" class="form-control">
+                    @foreach (var ktgr in Model.csKategoriler)
+                    {
+                        if (ktgr.kategori_id == 1)
+                        {
+                            <option selected="selected" value="@ktgr.kategori_id">@ktgr.kategori</option>
+                        }
+                        else
+                        {
+                            <option value="@ktgr.kategori_id">@ktgr.kategori</option>
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="form-group"><label>RESİM:</label><br /><input type="text" value=" @item.resim" class="form-control" name="resim" required /><br /></div>
+            <div class="form-group"><label>VİDEO LİNKİ:</label><br /><input type="text" value="@item.video" class="form-control" name="video" /><br /></div>
+            <div class="form-group">
+                <center>
+                    <label>
+                        <input type="checkbox" value="1" name="checkbox" />
+                        <span class="glyphicon"></span>
+                        Popüler Haber Olarak Kullanmak İstiyorum...
+                    </label>
+                </center>
+                <br />
+            </div>
+            <br />
+            <div class="form-group"><center><input type="submit" value="> HABERİ GÜNCELLE <" class="btn btn-warning" /></center></div>
+        }
+    }
+    @if (ViewBag.kategori == 2)
+    {
+        foreach (var item in Model.csHaberlerSeyahat)
+        {
+            <div class="form-group"><input type="text" style="width:0px; opacity:0%; border-color:white; background-color:white;" name="h_seyahat_id" value="@item.h_seyahat_id" /><br /></div>
+
+
+            <div class="form-group"><input type="text" class="form-control" name="baslik" value="@item.baslik" placeholder="Haberin başlığını yazınız..." required /><br /></div>
+            <div class="form-group"><label>İÇERİK 1:</label><br /><textarea name="icerik" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin ilk içeriğini yazınız..." required>@item.icerik</textarea><br /></div>
+            <div class="form-group"><label>İÇERİK 2:</label><br /><textarea name="icerik1" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin orta içeriğini yazınız..." required>@item.icerik1</textarea><br /></div>
+            <div class="form-group"><label>İÇERİK 3:</label><br /><textarea name="icerik2" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin son içeriğini yazınız..." required>@item.icerik2</textarea><br /></div>
+
+            <div class="form-group">
+                <label>KATEGORİ:</label><br />
+                <select name="Kategoriler_kategori_id" class="form-control">
+                    @foreach (var ktgr in Model.csKategoriler)
+                    {
+                        if (ktgr.kategori_id == 2)
+                        {
+                            <option selected="selected" value="@ktgr.kategori_id">@ktgr.kategori</option>
+                        }
+                        else
+                        {
+                            <option value="@ktgr.kategori_id">@ktgr.kategori</option>
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="form-group"><label>RESİM:</label><br /><input type="text" value=" @item.resim" class="form-control" name="resim" required /><br /></div>
+            <div class="form-group"><label>VİDEO LİNKİ:</label><br /><input type="text" value="@item.video" class="form-control" name="video" /><br /></div>
+            <div class="form-group">
+                <center>
+                    <label>
+                        <input type="checkbox" value="1" name="checkbox" />
+                        <span class="glyphicon"></span>
+                        Popüler Haber Olarak Kullanmak İstiyorum...
+                    </label>
+                </center>
+                <br />
+            </div>
+            <br />
+            <div class="form-group"><center><input type="submit" value="> HABERİ GÜNCELLE <" class="btn btn-info" /></center></div>
+        }
+    }
+    @if (ViewBag.kategori == 3)
+    {
+        foreach (var item in Model.csHaberlerSpor)
+        {
+            <div class="form-group"><input type="text" style="width:0px; opacity:0%; border-color:white; background-color:white;" name="h_spor_id" value="@item.h_spor_id" /><br /></div>
+
+            <div class="form-group"><input type="text" class="form-control" name="baslik" value="@item.baslik" placeholder="Haberin başlığını yazınız..." required /><br /></div>
+            <div class="form-group"><label>İÇERİK 1:</label><br /><textarea name="icerik" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin ilk içeriğini yazınız..." required>@item.icerik</textarea><br /></div>
+            <div class="form-group"><label>İÇERİK 2:</label><br /><textarea name="icerik1" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin orta içeriğini yazınız..." required>@item.icerik1</textarea><br /></div>
+            <div class="form-group"><label>İÇERİK 3:</label><br /><textarea name="icerik2" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin son içeriğini yazınız..." required>@item.icerik2</textarea><br /></div>
+
+            <div class="form-group">
+                <label>KATEGORİ:</label><br />
+                <select name="Kategoriler_kategori_id" class="form-control">
+                    @foreach (var ktgr in Model.csKategoriler)
+                    {
+                        if (ktgr.kategori_id == 3)
+                        {
+                            <option selected="selected" value="@ktgr.kategori_id">@ktgr.kategori</option>
+                        }
+                        else
+                        {
+                            <option value="@ktgr.kategori_id">@ktgr.kategori</option>
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="form-group"><label>RESİM:</label><br /><input type="text" value=" @item.resim" class="form-control" name="resim" required /><br /></div>
+            <div class="form-group"><label>VİDEO LİNKİ:</label><br /><input type="text" value="@item.video" class="form-control" name="video" /><br /></div>
+            <div class="form-group">
+                <center>
+                    <label>
+                        <input type="checkbox" value="1" name="checkbox" />
+                        <span class="glyphicon"></span>
+                        Popüler Haber Olarak Kullanmak İstiyorum...
+                    </label>
+                </center>
+                <br />
+            </div>
+            <br />
+            <div class="form-group"><center><input type="submit" value="> HABERİ GÜNCELLE <" class="btn btn-info" /></center></div>
+        }
+    }
+    @if (ViewBag.kategori == 4)
+    {
+        foreach (var item in Model.csHaberlerDoga)
+        {
+            <div class="form-group"><input type="text" style="width:0px; opacity:0%; border-color:white; background-color:white;" name="h_doga_id" value="@item.h_doga_id" /><br /></div>
+
+            <div class="form-group"><input type="text" class="form-control" name="baslik" value="@item.baslik" placeholder="Haberin başlığını yazınız..." required /><br /></div>
+            <div class="form-group"><label>İÇERİK 1:</label><br /><textarea name="icerik" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin ilk içeriğini yazınız..." required>@item.icerik</textarea><br /></div>
+            <div class="form-group"><label>İÇERİK 2:</label><br /><textarea name="icerik1" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin orta içeriğini yazınız..." required>@item.icerik1</textarea><br /></div>
+            <div class="form-group"><label>İÇERİK 3:</label><br /><textarea name="icerik2" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin son içeriğini yazınız..." required>@item.icerik2</textarea><br /></div>
+
+            <div class="form-group">
+                <label>KATEGORİ:</label><br />
+                <select name="Kategoriler_kategori_id" class="form-control">
+                    @foreach (var ktgr in Model.csKategoriler)
+                    {
+                        if (ktgr.kategori_id == 4)
+                        {
+                            <option selected="selected" value="@ktgr.kategori_id">@ktgr.kategori</option>
+                        }
+                        else
+                        {
+                            <option value="@ktgr.kategori_id">@ktgr.kategori</option>
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="form-group"><label>RESİM:</label><br /><input type="text" value=" @item.resim" class="form-control" name="resim" required /><br /></div>
+            <div class="form-group"><label>VİDEO LİNKİ:</label><br /><input type="text" value="@item.video" class="form-control" name="video" /><br /></div>
+            <div class="form-group">
+                <center>
+                    <label>
+                        <input type="checkbox" value="1" name="checkbox" />
+                        <span class="glyphicon"></span>
+                        Popüler Haber Olarak Kullanmak İstiyorum...
+                    </label>
+                </center>
+                <br />
+            </div>
+            <br />
+            <div class="form-group"><center><input type="submit" value="> HABERİ GÜNCELLE <" class="btn btn-info" /></center></div>
+        }
+    }
+    @if (ViewBag.kategori == 5)
+    {
+        foreach (var item in Model.csHaberlerTeknoloji)
+        {
+            <div class="form-group"><input type="text" style="width:0px; opacity:0%; border-color:white; background-color:white;" name="h_teknoloji_id" value="@item.h_teknoloji_id" /><br /></div>
+
+            <div class="form-group"><input type="text" class="form-control" name="baslik" value="@item.baslik" placeholder="Haberin başlığını yazınız..." required /><br /></div>
+            <div class="form-group"><label>İÇERİK 1:</label><br /><textarea name="icerik" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin ilk içeriğini yazınız..." required>@item.icerik</textarea><br /></div>
+            <div class="form-group"><label>İÇERİK 2:</label><br /><textarea name="icerik1" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin orta içeriğini yazınız..." required>@item.icerik1</textarea><br /></div>
+            <div class="form-group"><label>İÇERİK 3:</label><br /><textarea name="icerik2" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin son içeriğini yazınız..." required>@item.icerik2</textarea><br /></div>
+
+            <div class="form-group">
+                <label>KATEGORİ:</label><br />
+                <select name="Kategoriler_kategori_id" class="form-control">
+                    @foreach (var ktgr in Model.csKategoriler)
+                    {
+                        if (ktgr.kategori_id == 5)
+                        {
+                            <option selected="selected" value="@ktgr.kategori_id">@ktgr.kategori</option>
+                        }
+                        else
+                        {
+                            <option value="@ktgr.kategori_id">@ktgr.kategori</option>
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="form-group"><label>RESİM:</label><br /><input type="text" value=" @item.resim" class="form-control" name="resim" required /><br /></div>
+            <div class="form-group"><label>VİDEO LİNKİ:</label><br /><input type="text" value="@item.video" class="form-control" name="video" /><br /></div>
+            <div class="form-group">
+                <center>
+                    <label>
+                        <input type="checkbox" value="1" name="checkbox" />
+                        <span class="glyphicon"></span>
+                        Popüler Haber Olarak Kullanmak İstiyorum...
+                    </label>
+                </center>
+                <br />
+            </div>
+            <br />
+            <div class="form-group"><center><input type="submit" value="> HABERİ GÜNCELLE <" class="btn btn-info" /></center></div>
+        }
+    }
+    @if (ViewBag.kategori == 6)
+    {
+        foreach (var item in Model.csHaberlerFilm)
+        {
+            <div class="form-group"><input type="text" style="width:0px; opacity:0%; border-color:white; background-color:white;" name="h_film_id" value="@item.h_film_id" /><br /></div>
+
+            <div class="form-group"><input type="text" class="form-control" name="baslik" value="@item.baslik" placeholder="Haberin başlığını yazınız..." required /><br /></div>
+            <div class="form-group"><label>İÇERİK 1:</label><br /><textarea name="icerik" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin ilk içeriğini yazınız..." required>@item.icerik</textarea><br /></div>
+            <div class="form-group"><label>İÇERİK 2:</label><br /><textarea name="icerik1" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin orta içeriğini yazınız..." required>@item.icerik1</textarea><br /></div>
+            <div class="form-group"><label>İÇERİK 3:</label><br /><textarea name="icerik2" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin son içeriğini yazınız..." required>@item.icerik2</textarea><br /></div>
+
+            <div class="form-group">
+                <label>KATEGORİ:</label><br />
+                <select name="Kategoriler_kategori_id" class="form-control">
+                    @foreach (var ktgr in Model.csKategoriler)
+                    {
+                        if (ktgr.kategori_id == 6)
+                        {
+                            <option selected="selected" value="@ktgr.kategori_id">@ktgr.kategori</option>
+                        }
+                        else
+                        {
+                            <option value="@ktgr.kategori_id">@ktgr.kategori</option>
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="form-group"><label>RESİM:</label><br /><input type="text" value=" @item.resim" class="form-control" name="resim" required /><br /></div>
+            <div class="form-group"><label>VİDEO LİNKİ:</label><br /><input type="text" value="@item.video" class="form-control" name="video" /><br /></div>
+            <div class="form-group">
+                <center>
+                    <label>
+                        <input type="checkbox" value="1" name="checkbox" />
+                        <span class="glyphicon"></span>
+                        Popüler Haber Olarak Kullanmak İstiyorum...
+                    </label>
+                </center>
+                <br />
+            </div>
+            <br />
+            <div class="form-group"><center><input type="submit" value="> HABERİ GÜNCELLE <" class="btn btn-info" /></center></div>
+        }
+    }
+</form>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+

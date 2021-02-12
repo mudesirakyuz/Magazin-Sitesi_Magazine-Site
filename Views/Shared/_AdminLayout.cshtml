@@ -1,0 +1,178 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
+
+    <title>Admin</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="~/araclar/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="~/araclar/css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="~/araclar/css/bootstrap.css">
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="~/araclar/css/flexslider.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="~/araclar/css/magnific-popup.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="~/araclar/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/araclar/css/owl.theme.default.min.css">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="~/araclar/css/style.css">
+
+    <!-- Modernizr JS -->
+    <script src="~/araclar/js/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="~/admin/css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="~/admin/css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="~/admin/css/invalid.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="~/admin/scripts/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="~/admin/scripts/simpla.jquery.configuration.js"></script>
+    <script type="text/javascript" src="~/admin/scripts/facebox.js"></script>
+    <script type="text/javascript" src="~/admin/scripts/jquery.wysiwyg.js"></script>
+    <script type="text/javascript" src="~/admin/scripts/jquery.datePicker.js"></script>
+    <script type="text/javascript" src="~/admin/scripts/jquery.date.js"></script>
+
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+    </style>
+
+
+</head>
+<body>
+        <div id="body-wrapper">
+            <!-- Wrapper for the radial gradient background -->
+
+            <div id="sidebar">
+                <div id="sidebar-wrapper">
+                    <!-- Sidebar with logo and menu -->
+
+                    <h1 id="sidebar-title"><a href="#">Admin Paneli</a></h1>
+
+                    <!-- Logo (221px wide) -->
+                    <a href="/Admin/Index">
+                        <img id="logo" src="~/admin/images/logo.png" style="margin-left:60px; width:100px; height:100px;"/>
+                    </a><br />
+
+                    <!-- Sidebar Profile links -->
+                    <div id="profile-links">
+                        Merhaba, <a href="#" title="Adınız Soyadınız">Ahmet</a><br />
+                        <br />
+                        <a href="/Anasayfa/Index" title="Siteye Git">Site Anasayfası</a> | <a href="üyegiris.aspx" title="Çıkış">Çıkış</a>
+                    </div>
+
+                    <ul id="main-nav">
+                        <!-- Accordion Menu -->
+
+                        <li>
+                            <a href="/Admin/Index" class="nav-top-item no-submenu">
+                                Admin Anasayfa
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="nav-top-item">
+                                Yönetim
+                            </a>
+                            <ul>
+                                <li><a href="/AHaberEditoru/Index">Haber Editörü</a></li>
+                                <li><a href="APopulerHaber.aspx">Popüler Haber Editörü</a></li>
+                                <li><a href="AAnasayfaBaslik.aspx">Anasayfa Başlık Editörü</a></li>
+                                <li><a href="ADuyuru.aspx">Duyuru Editörü</a></li>
+                                <li><a href="AKategori2.aspx">Kategori Editörü</a></li>
+                                <li><a href="AKullanici.aspx">Kullanıcı Editörü</a></li>
+                                <li><a href="AGaleri.aspx">Galeri Editörü</a></li>
+                                <%Response.Write(html); %>
+
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <div style="background-color:#666666; color: #000000;">
+
+                                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                                <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" ImageSet="Arrows">
+                                    <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                                    <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+                                    <ParentNodeStyle Font-Bold="False" />
+                                    <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px" VerticalPadding="0px" />
+                                </asp:TreeView>
+
+                            </div>
+                        </li>
+
+
+                    </ul>
+
+                </div>
+            </div>
+            <!-- End #sidebar -->
+
+            <div id="main-content">
+
+                <!-- Main Content Section with everything -->
+
+                @RenderBody()
+
+                <!-- jQuery -->
+                <script src="~/araclar/js/jquery.min.js"></script>
+                <!-- jQuery Easing -->
+                <script src="~/araclar/js/jquery.easing.1.3.js"></script>
+                <!-- Bootstrap -->
+                <script src="~/araclar/js/bootstrap.min.js"></script>
+                <!-- Waypoints -->
+                <script src="~/araclar/js/jquery.waypoints.min.js"></script>
+                <!-- Flexslider -->
+                <script src="~/araclar/js/jquery.flexslider-min.js"></script>
+                <!-- Magnific Popup -->
+                <script src="~/araclar/js/jquery.magnific-popup.min.js"></script>
+                <script src="~/araclar/js/magnific-popup-options.js"></script>
+                <!-- Owl Carousel -->
+                <script src="~/araclar/js/owl.carousel.min.js"></script>
+                <!-- Sticky Kit -->
+                <script src="~/araclar/js/sticky-kit.min.js"></script>
+
+
+                <!-- MAIN JS -->
+                <script src="~/araclar/js/main.js"></script>
+            </div>
+            <!-- End .content-box -->
+        </div>
+        <!-- End #main-content -->
+
+    
+
+</body>
+</html>

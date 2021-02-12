@@ -1,0 +1,486 @@
+﻿@model Megazinde.Models.Siniflar.anasayfaClass
+@{
+    ViewBag.Title = "HaberDetay";
+    Layout = "~/Views/Shared/_SiteMasterPageLayout.cshtml";
+}
+
+
+<!--ViewData["kategori"] ViewData["baslik"]-->
+
+<div id="colorlib-page">
+    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+
+    <div id="colorlib-main">
+        <div class="colorlib-blog">
+            <div class="container-wrap">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="content-wrap">
+
+                            <!--       --------------------------Gönderi ve Yorumlar--------------------------        -->
+
+                            @if (ViewData["kategori"].ToString() == "Moda")
+                            {
+                                foreach (var haber in Model.csHaberlerModa)
+                                {
+                                    <article class="animate-box">
+                                        <div class="blog-img" style="background-image: url(/araclar/images/@haber.resim);"></div>
+                                        <div class="desc">
+                                            <div class="meta">
+                                                <p>
+                                                    <span>@ViewData["kategori"]</span>
+                                                    <span>@haber.tarih</span>
+                                                    <span><a>@haber.tiklanma</a></span>
+                                                </p>
+                                            </div>
+                                            <h2><a href="single.html">@haber.baslik</a></h2>
+                                            <p>@haber.icerik</p>
+                                            <p>@haber.icerik1</p>
+                                            <p>@haber.icerik2</p>
+                                        </div>
+                                    </article>
+
+                                    <!--       --------------------------Yorumlar--------------------------        -->
+                                    int a = 0;
+                                    <div class="row row-bottom-padded-md">
+                                        <div class="col-md-12 animate-box">
+                                            <h2 class="heading-2">@Model.csYorumlar.Where(x => x.Haberler_h_id == haber.h_moda_id && x.Kategoriler_kategori_id == 1).Count()</h2>
+
+                                            @foreach (var yorum in Model.csYorumlar)
+                                            {
+                                                if (Model.csYorumlar.Where(x => x.Haberler_h_id == haber.h_moda_id).Count() == a)
+                                                { break; }
+                                                if (yorum.Kategoriler_kategori_id == 1 && yorum.Haberler_h_id == haber.h_moda_id)
+                                                {
+                                                    <div class="review">
+                                                        <div class="user-img" style="background-image: url(/araclar/images/@yorum.Kullanicilars.resim)"></div>
+                                                        <div class="desc">
+                                                            <h4>
+                                                                <span class="text-left">@yorum.Kullanicilars.ad   @yorum.Kullanicilars.soyad</span>
+                                                                <span class="text-right">@yorum.tarih</span>
+                                                            </h4>
+                                                            <p>@yorum.yorum</p>
+                                                        </div>
+                                                    </div>
+                                                    a++;
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                    <!--       --------------------------Yorumlar--------------------------        -->
+
+
+                                    <!--       --------------------------Yorumlar Girişi--------------------------        -->
+                                    <div class="row">
+                                        <div class="col-md-12 animate-box">
+                                            <h2 class="heading-2">Yorum Yap</h2>
+                                            <form action="#">
+                                                <div class="row form-group">
+                                                    <div class="col-md-12">
+                                                        <textarea name="yorum" id="message" cols="30" rows="10" class="form-control" placeholder="Bu haber hakkında ne düşünüyorsun?..."></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <a href="#" class="btn btn-primary">Gönder</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!--       --------------------------Yorumlar Girişi--------------------------        -->
+                                }
+                            }
+                            @if (ViewData["kategori"].ToString() == "Seyahat")
+                            {
+                                foreach (var haber in Model.csHaberlerSeyahat)
+                                {
+                                    <article class="animate-box">
+                                        <div class="blog-img" style="background-image: url(/araclar/images/@haber.resim);"></div>
+                                        <div class="desc">
+                                            <div class="meta">
+                                                <p>
+                                                    <span>@ViewData["kategori"]</span>
+                                                    <span>@haber.tarih</span>
+                                                    <span><a>@haber.tiklanma</a></span>
+                                                </p>
+                                            </div>
+                                            <h2><a href="single.html">@haber.baslik</a></h2>
+                                            <p>@haber.icerik</p>
+                                            <p>@haber.icerik1</p>
+                                            <p>@haber.icerik2</p>
+                                        </div>
+                                    </article>
+
+                                    <!--       --------------------------Yorumlar--------------------------        -->
+                                    int a = 0;
+                                    <div class="row row-bottom-padded-md">
+                                        <div class="col-md-12 animate-box">
+                                            <h2 class="heading-2">@Model.csYorumlar.Where(x => x.Haberler_h_id == haber.h_seyahat_id && x.Kategoriler_kategori_id == 2).Count()</h2>
+
+                                            @foreach (var yorum in Model.csYorumlar)
+                                            {
+                                                if (Model.csYorumlar.Where(x => x.Haberler_h_id == haber.h_seyahat_id).Count() == a)
+                                                { break; }
+                                                if (yorum.Kategoriler_kategori_id == 2 && yorum.Haberler_h_id == haber.h_seyahat_id)
+                                                {
+                                                    <div class="review">
+                                                        <div class="user-img" style="background-image: url(/araclar/images/@yorum.Kullanicilars.resim)"></div>
+                                                        <div class="desc">
+                                                            <h4>
+                                                                <span class="text-left">@yorum.Kullanicilars.ad   @yorum.Kullanicilars.soyad</span>
+                                                                <span class="text-right">@yorum.tarih</span>
+                                                            </h4>
+                                                            <p>@yorum.yorum</p>
+                                                        </div>
+                                                    </div>
+                                                    a++;
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                    <!--       --------------------------Yorumlar--------------------------        -->
+
+
+                                    <!--       --------------------------Yorumlar Girişi--------------------------        -->
+                                    <div class="row">
+                                        <div class="col-md-12 animate-box">
+                                            <h2 class="heading-2">Yorum Yap</h2>
+                                            <form action="#">
+                                                <div class="row form-group">
+                                                    <div class="col-md-12">
+                                                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Bu haber hakkında ne düşünüyorsun?..."></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <a href="#" class="btn btn-primary">Gönder</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!--       --------------------------Yorumlar Girişi--------------------------        -->
+                                }
+                            }
+                            @if (ViewData["kategori"].ToString() == "Spor")
+                            {
+                                foreach (var haber in Model.csHaberlerSpor)
+                                {
+                                    <article class="animate-box">
+                                        <div class="blog-img" style="background-image: url(/araclar/images/@haber.resim);"></div>
+                                        <div class="desc">
+                                            <div class="meta">
+                                                <p>
+                                                    <span>@ViewData["kategori"]</span>
+                                                    <span>@haber.tarih</span>
+                                                    <span><a>@haber.tiklanma</a></span>
+                                                </p>
+                                            </div>
+                                            <h2><a href="single.html">@haber.baslik</a></h2>
+                                            <p>@haber.icerik</p>
+                                            <p>@haber.icerik1</p>
+                                            <p>@haber.icerik2</p>
+                                        </div>
+                                    </article>
+
+                                    <!--       --------------------------Yorumlar--------------------------        -->
+                                    int a = 0;
+                                    <div class="row row-bottom-padded-md">
+                                        <div class="col-md-12 animate-box">
+                                            <h2 class="heading-2">@Model.csYorumlar.Where(x => x.Haberler_h_id == haber.h_spor_id && x.Kategoriler_kategori_id == 3).Count()</h2>
+
+                                            @foreach (var yorum in Model.csYorumlar)
+                                            {
+                                                if (Model.csYorumlar.Where(x => x.Haberler_h_id == haber.h_spor_id).Count() == a)
+                                                { break; }
+                                                if (yorum.Kategoriler_kategori_id == 3 && yorum.Haberler_h_id == haber.h_spor_id)
+                                                {
+                                                    <div class="review">
+                                                        <div class="user-img" style="background-image: url(/araclar/images/@yorum.Kullanicilars.resim)"></div>
+                                                        <div class="desc">
+                                                            <h4>
+                                                                <span class="text-left">@yorum.Kullanicilars.ad   @yorum.Kullanicilars.soyad</span>
+                                                                <span class="text-right">@yorum.tarih</span>
+                                                            </h4>
+                                                            <p>@yorum.yorum</p>
+                                                        </div>
+                                                    </div>
+                                                    a++;
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                    <!--       --------------------------Yorumlar--------------------------        -->
+
+
+                                    <!--       --------------------------Yorumlar Girişi--------------------------        -->
+                                    <div class="row">
+                                        <div class="col-md-12 animate-box">
+                                            <h2 class="heading-2">Yorum Yap</h2>
+                                            <form action="#">
+                                                <div class="row form-group">
+                                                    <div class="col-md-12">
+                                                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Bu haber hakkında ne düşünüyorsun?..."></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <a href="#" class="btn btn-primary">Gönder</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!--       --------------------------Yorumlar Girişi--------------------------        -->
+                                }
+                            }
+                            @if (ViewData["kategori"].ToString() == "Doga")
+                            {
+                                foreach (var haber in Model.csHaberlerDoga)
+                                {
+                                    <article class="animate-box">
+                                        <div class="blog-img" style="background-image: url(/araclar/images/@haber.resim);"></div>
+                                        <div class="desc">
+                                            <div class="meta">
+                                                <p>
+                                                    <span>@ViewData["kategori"]</span>
+                                                    <span>@haber.tarih</span>
+                                                    <span><a>@haber.tiklanma</a></span>
+                                                </p>
+                                            </div>
+                                            <h2><a href="single.html">@haber.baslik</a></h2>
+                                            <p>@haber.icerik</p>
+                                            <p>@haber.icerik1</p>
+                                            <p>@haber.icerik2</p>
+                                        </div>
+                                    </article>
+
+                                    <!--       --------------------------Yorumlar--------------------------        -->
+                                    int a = 0;
+                                    <div class="row row-bottom-padded-md">
+                                        <div class="col-md-12 animate-box">
+                                            <h2 class="heading-2">@Model.csYorumlar.Where(x => x.Haberler_h_id == haber.h_doga_id && x.Kategoriler_kategori_id == 4).Count()</h2>
+
+                                            @foreach (var yorum in Model.csYorumlar)
+                                            {
+                                                if (Model.csYorumlar.Where(x => x.Haberler_h_id == haber.h_doga_id).Count() == a)
+                                                { break; }
+                                                if (yorum.Kategoriler_kategori_id == 4 && yorum.Haberler_h_id == haber.h_doga_id)
+                                                {
+                                                    <div class="review">
+                                                        <div class="user-img" style="background-image: url(/araclar/images/@yorum.Kullanicilars.resim)"></div>
+                                                        <div class="desc">
+                                                            <h4>
+                                                                <span class="text-left">@yorum.Kullanicilars.ad   @yorum.Kullanicilars.soyad</span>
+                                                                <span class="text-right">@yorum.tarih</span>
+                                                            </h4>
+                                                            <p>@yorum.yorum</p>
+                                                        </div>
+                                                    </div>
+                                                    a++;
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                    <!--       --------------------------Yorumlar--------------------------        -->
+
+
+                                    <!--       --------------------------Yorumlar Girişi--------------------------        -->
+                                    <div class="row">
+                                        <div class="col-md-12 animate-box">
+                                            <h2 class="heading-2">Yorum Yap</h2>
+                                            <form action="#">
+                                                <div class="row form-group">
+                                                    <div class="col-md-12">
+                                                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Bu haber hakkında ne düşünüyorsun?..."></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <a href="#" class="btn btn-primary">Gönder</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!--       --------------------------Yorumlar Girişi--------------------------        -->
+                                }
+                            }
+                            @if (ViewData["kategori"].ToString() == "Teknoloji")
+                            {
+                                foreach (var haber in Model.csHaberlerTeknoloji)
+                                {
+                                    <article class="animate-box">
+                                        <div class="blog-img" style="background-image: url(/araclar/images/@haber.resim);"></div>
+                                        <div class="desc">
+                                            <div class="meta">
+                                                <p>
+                                                    <span>@ViewData["kategori"]</span>
+                                                    <span>@haber.tarih</span>
+                                                    <span><a>@haber.tiklanma</a></span>
+                                                </p>
+                                            </div>
+                                            <h2><a href="single.html">@haber.baslik</a></h2>
+                                            <p>@haber.icerik</p>
+                                            <p>@haber.icerik1</p>
+                                            <p>@haber.icerik2</p>
+                                        </div>
+                                    </article>
+
+                                    <!--       --------------------------Yorumlar--------------------------        -->
+                                    int a = 0;
+                                    <div class="row row-bottom-padded-md">
+                                        <div class="col-md-12 animate-box">
+                                            <h2 class="heading-2">@Model.csYorumlar.Where(x => x.Haberler_h_id == haber.h_teknoloji_id && x.Kategoriler_kategori_id == 5).Count()</h2>
+
+                                            @foreach (var yorum in Model.csYorumlar)
+                                            {
+                                                if (Model.csYorumlar.Where(x => x.Haberler_h_id == haber.h_teknoloji_id).Count() == a)
+                                                { break; }
+                                                if (yorum.Kategoriler_kategori_id == 5 && yorum.Haberler_h_id == haber.h_teknoloji_id)
+                                                {
+                                                    <div class="review">
+                                                        <div class="user-img" style="background-image: url(/araclar/images/@yorum.Kullanicilars.resim)"></div>
+                                                        <div class="desc">
+                                                            <h4>
+                                                                <span class="text-left">@yorum.Kullanicilars.ad   @yorum.Kullanicilars.soyad</span>
+                                                                <span class="text-right">@yorum.tarih</span>
+                                                            </h4>
+                                                            <p>@yorum.yorum</p>
+                                                        </div>
+                                                    </div>
+                                                    a++;
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                    <!--       --------------------------Yorumlar--------------------------        -->
+
+
+                                    <!--       --------------------------Yorumlar Girişi--------------------------        -->
+                                    <div class="row">
+                                        <div class="col-md-12 animate-box">
+                                            <h2 class="heading-2">Yorum Yap</h2>
+                                            <form action="#">
+                                                <div class="row form-group">
+                                                    <div class="col-md-12">
+                                                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Bu haber hakkında ne düşünüyorsun?..."></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <a href="#" class="btn btn-primary">Gönder</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!--       --------------------------Yorumlar Girişi--------------------------        -->
+                                }
+                            }
+                            @if (ViewData["kategori"].ToString() == "Film")
+                            {
+                                foreach (var haber in Model.csHaberlerFilm)
+                                {
+                                    <article class="animate-box">
+                                        <div class="blog-img" style="background-image: url(/araclar/images/@haber.resim);"></div>
+                                        <div class="desc">
+                                            <div class="meta">
+                                                <p>
+                                                    <span>@ViewData["kategori"]</span>
+                                                    <span>@haber.tarih</span>
+                                                    <span><a>@haber.tiklanma</a></span>
+                                                </p>
+                                            </div>
+                                            <h2><a href="single.html">@haber.baslik</a></h2>
+                                            <p>@haber.icerik</p>
+                                            <p>@haber.icerik1</p>
+                                            <p>@haber.icerik2</p>
+                                        </div>
+                                    </article>
+
+                                    <!--       --------------------------Yorumlar--------------------------        -->
+                                    int a = 0;
+                                    <div class="row row-bottom-padded-md">
+                                        <div class="col-md-12 animate-box">
+                                            <h2 class="heading-2">@Model.csYorumlar.Where(x => x.Haberler_h_id == haber.h_film_id && x.Kategoriler_kategori_id == 6).Count()</h2>
+
+                                            @foreach (var yorum in Model.csYorumlar)
+                                            {
+                                                if (Model.csYorumlar.Where(x => x.Haberler_h_id == haber.h_film_id).Count() == a)
+                                                { break; }
+                                                if (yorum.Kategoriler_kategori_id == 6 && yorum.Haberler_h_id == haber.h_film_id)
+                                                {
+                                                    <div class="review">
+                                                        <div class="user-img" style="background-image: url(/araclar/images/@yorum.Kullanicilars.resim)"></div>
+                                                        <div class="desc">
+                                                            <h4>
+                                                                <span class="text-left">@yorum.Kullanicilars.ad   @yorum.Kullanicilars.soyad</span>
+                                                                <span class="text-right">@yorum.tarih</span>
+                                                            </h4>
+                                                            <p>@yorum.yorum</p>
+                                                        </div>
+                                                    </div>
+                                                    a++;
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                    <!--       --------------------------Yorumlar--------------------------        -->
+
+
+                                    <!--       --------------------------Yorumlar Girişi--------------------------        -->
+                                    <div class="row">
+                                        <div class="col-md-12 animate-box">
+                                            <h2 class="heading-2">Yorum Yap</h2>
+                                            <form action="#">
+                                                <div class="row form-group">
+                                                    <div class="col-md-12">
+                                                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Bu haber hakkında ne düşünüyorsun?..."></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <a href="#" class="btn btn-primary">Gönder</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!--       --------------------------Yorumlar Girişi--------------------------        -->
+                                }
+                            }
+
+                            <!--       --------------------------Gönderi ve Yorumlar--------------------------        -->
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 sticky-parent">
+                        <div class="sidebar" id="sticky_item">
+                            <div class="side animate-box">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="search" placeholder="Ne Aramıştınız...">
+                                    <button type="submit" class="btn submit btn-primary"><i class="icon-search3"></i></button>
+                                </div>
+                            </div>
+                            <div class="side animate-box">
+                                <h2 class="sidebar-heading">Kategoriler</h2>
+                                <p>
+                                    <ul class="category">
+                                        <li><a>@Html.ActionLink("Anasayfa", "Index", "Anasayfa")</a></li>
+                                        @foreach (var kategori in Model.csKategoriler)
+                                        {
+                                            <li><a href="/Anasayfa/KategoriOnizleme/@kategori.kategori_id">@kategori.kategori</a></li>
+                                        }
+                                    </ul>
+                                </p>
+                            </div>
+
+
+                            <!--   ---------------Sağ Scroll---------------   -->
+                            <div style="margin-top:1000px;"></div>
+                            <div class="side animate-box">
+                                <h2 class="sidebar-heading"></h2>
+                                <div class="instagram-entry">
+                                </div>
+                            </div>
+                            <!--   ---------------Sağ Scroll---------------   -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

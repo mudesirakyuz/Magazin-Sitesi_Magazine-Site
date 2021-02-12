@@ -1,0 +1,496 @@
+﻿@model Megazinde.Models.Siniflar.anasayfaClass
+@{
+    ViewBag.Title = "KategoriOnizleme";
+    Layout = "~/Views/Shared/_SiteMasterPageLayout.cshtml";
+}
+
+
+<div id="colorlib-page">
+    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+
+    <div id="colorlib-main">
+        <div class="colorlib-blog">
+            <div class="container-wrap">
+
+
+                <div class="row row-pb-lg">
+                    <div class="col-md-12 blog-slider">
+                        <div class="owl-carousel1">
+
+                            <!--    ----------------------Tüm Haberler----------------------    -->
+
+                            @if (Model.csHaberlerModa != null)
+                            {
+                                foreach (var haber in Model.csHaberlerModa)
+                                {
+                                    <div class="item">
+                                        <div class="blog-entry animate-box">
+                                            <div class="blog-img" style="background-image: url(/araclar/images/@haber.resim);">
+                                                <div class="desc desc2 text-center">
+                                                    <p class="tag"><span>Moda</span></p>
+                                                    <div class="desc-bottom">
+                                                        <h2 class="head-article"><a href="/Anasayfa/HaberDetay?haberid=@haber.h_moda_id&ktgr=Moda">@haber.baslik</a></h2>
+                                                        <p>@haber.icerik</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            @if (Model.csHaberlerSeyahat != null)
+                            {
+                                foreach (var haber in Model.csHaberlerSeyahat)
+                                {
+                                    <div class="item">
+                                        <div class="blog-entry animate-box">
+                                            <div class="blog-img" style="background-image: url(/araclar/images/@haber.resim);">
+                                                <div class="desc desc2 text-center">
+                                                    <p class="tag"><span>Seyahat</span></p>
+                                                    <div class="desc-bottom">
+                                                        <h2 class="head-article"><a href="/Anasayfa/HaberDetay?haberid=@haber.h_seyahat_id&ktgr=Seyahat">@haber.baslik</a></h2>
+                                                        <p>@haber.icerik</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            @if (Model.csHaberlerSpor != null)
+                            {
+                                foreach (var haber in Model.csHaberlerSpor)
+                                {
+                                    <div class="item">
+                                        <div class="blog-entry animate-box">
+                                            <div class="blog-img" style="background-image: url(/araclar/images/@haber.resim);">
+                                                <div class="desc desc2 text-center">
+                                                    <p class="tag"><span>Spor</span></p>
+                                                    <div class="desc-bottom">
+                                                        <h2 class="head-article"><a href="/Anasayfa/HaberDetay?haberid=@haber.h_spor_id&ktgr=Spor">@haber.baslik</a></h2>
+                                                        <p>@haber.icerik</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            @if (Model.csHaberlerDoga != null)
+                            {
+                                foreach (var haber in Model.csHaberlerDoga)
+                                {
+                                    <div class="item">
+                                        <div class="blog-entry animate-box">
+                                            <div class="blog-img" style="background-image: url(/araclar/images/@haber.resim);">
+                                                <div class="desc desc2 text-center">
+                                                    <p class="tag"><span>Doga</span></p>
+                                                    <div class="desc-bottom">
+                                                        <h2 class="head-article"><a href="/Anasayfa/HaberDetay?haberid=@haber.h_doga_id&ktgr=Doga">@haber.baslik</a></h2>
+                                                        <p>@haber.icerik</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            @if (Model.csHaberlerTeknoloji != null)
+                            {
+                                foreach (var haber in Model.csHaberlerTeknoloji)
+                                {
+                                    <div class="item">
+                                        <div class="blog-entry animate-box">
+                                            <div class="blog-img" style="background-image: url(/araclar/images/@haber.resim);">
+                                                <div class="desc desc2 text-center">
+                                                    <p class="tag"><span>Teknoloji</span></p>
+                                                    <div class="desc-bottom">
+                                                        <h2 class="head-article"><a href="/Anasayfa/HaberDetay?haberid=@haber.h_teknoloji_id&ktgr=Teknoloji">@haber.baslik</a></h2>
+                                                        <p>@haber.icerik</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            @if (Model.csHaberlerFilm != null)
+                            {
+                                foreach (var haber in Model.csHaberlerFilm)
+                                {
+                                    <div class="item">
+                                        <div class="blog-entry animate-box">
+                                            <div class="blog-img" style="background-image: url(/araclar/images/@haber.resim);">
+                                                <div class="desc desc2 text-center">
+                                                    <p class="tag"><span>Film</span></p>
+                                                    <div class="desc-bottom">
+                                                        <h2 class="head-article"><a href="/Anasayfa/HaberDetay?haberid=@haber.h_film_id&ktgr=Film">@haber.baslik</a></h2>
+                                                        <p>@haber.icerik</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+                            <!--    ----------------------Tüm Haberler----------------------    -->
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="content-wrap">
+
+                            <!--    ----------------------Haber Sayfaları Kontrolü----------------------    -->
+                            @if (ViewData["kategoriid"].ToString() == "1")
+                            {
+
+                                foreach (var ktghaber in Model.csHaberlerModa)
+                                {
+                                    if (ktghaber.video != null && ktghaber.video != "")
+                                    {
+                                        <article class="animate-box">
+                                            <div class="blog-img">
+                                                <div class="video colorlib-video" style="background-image: url(/araclar/images/@ktghaber.resim);">
+                                                    <a href="@ktghaber.video" class="popup-vimeo"><i class="icon-play4"></i></a>
+                                                    <div class="overlay"></div>
+                                                </div>
+                                            </div>
+                                            <div class="desc">
+                                                <div class="meta">
+                                                    <p>
+                                                        <span>Video</span>
+                                                        <span>@ktghaber.tarih</span>
+                                                        <span>Tıklanma: @ktghaber.tiklanma</span>
+                                                    </p>
+                                                </div>
+                                                <h2><a href="single.html">@ktghaber.baslik</a></h2>
+                                                <p>@ktghaber.icerik</p>
+                                                <p><a href="/Anasayfa/HaberDetay?haberid=@ktghaber.h_moda_id&ktgr=Moda" class="btn btn-primary with-arrow">Devamını Oku<i class="icon-arrow-right22"></i></a></p>
+                                            </div>
+                                        </article>
+                                    }
+                                    else
+                                    {
+                                        <article class="animate-box">
+                                            <div class="blog-img" style="background-image: url(/araclar/images/@ktghaber.resim);"></div>
+                                            <div class="desc">
+                                                <div class="meta">
+                                                    <p>
+                                                        <span>Haber</span>
+                                                        <span>@ktghaber.tarih</span>
+                                                        <span>Tıklanma: @ktghaber.tiklanma</span>
+                                                    </p>
+                                                </div>
+                                                <h2><a href="single.html">@ktghaber.baslik</a></h2>
+                                                <p>@ktghaber.icerik</p>
+                                                <p><a href="/Anasayfa/HaberDetay?haberid=@ktghaber.h_moda_id&ktgr=Moda" class="btn btn-primary with-arrow">Devamını Oku<i class="icon-arrow-right22"></i></a></p>
+                                            </div>
+                                        </article>
+                                    }
+                                }
+                            }
+                            @if (ViewData["kategoriid"].ToString() == "2")
+                            {
+
+                                foreach (var ktghaber in Model.csHaberlerSeyahat)
+                                {
+                                    if (ktghaber.video != null && ktghaber.video != "")
+                                    {
+                                        <article class="animate-box">
+                                            <div class="blog-img">
+                                                <div class="video colorlib-video" style="background-image: url(/araclar/images/@ktghaber.resim);">
+                                                    <a href="@ktghaber.video" class="popup-vimeo"><i class="icon-play4"></i></a>
+                                                    <div class="overlay"></div>
+                                                </div>
+                                            </div>
+                                            <div class="desc">
+                                                <div class="meta">
+                                                    <p>
+                                                        <span>Video</span>
+                                                        <span>@ktghaber.tarih</span>
+                                                        <span>Tıklanma: @ktghaber.tiklanma</span>
+                                                    </p>
+                                                </div>
+                                                <h2><a href="single.html">@ktghaber.baslik</a></h2>
+                                                <p>@ktghaber.icerik</p>
+                                                <p><a href="/Anasayfa/HaberDetay?haberid=@ktghaber.h_seyahat_id&ktgr=Seyahat" class="btn btn-primary with-arrow">Devamını Oku <i class="icon-arrow-right22"></i></a></p>
+                                            </div>
+                                        </article>
+                                    }
+                                    else
+                                    {
+                                        <article class="animate-box">
+                                            <div class="blog-img" style="background-image: url(/araclar/images/@ktghaber.resim);"></div>
+                                            <div class="desc">
+                                                <div class="meta">
+                                                    <p>
+                                                        <span>Haber</span>
+                                                        <span>@ktghaber.tarih</span>
+                                                        <span>Tıklanma: @ktghaber.tiklanma</span>
+                                                    </p>
+                                                </div>
+                                                <h2><a href="single.html">@ktghaber.baslik</a></h2>
+                                                <p>@ktghaber.icerik</p>
+                                                <p><a href="/Anasayfa/HaberDetay?haberid=@ktghaber.h_seyahat_id&ktgr=Seyahat" class="btn btn-primary with-arrow">Devamını Oku<i class="icon-arrow-right22"></i></a></p>
+                                            </div>
+                                        </article>
+                                    }
+                                }
+                            }
+                            @if (ViewData["kategoriid"].ToString() == "3")
+                            {
+
+                                foreach (var ktghaber in Model.csHaberlerSpor)
+                                {
+                                    if (ktghaber.video != null && ktghaber.video != "")
+                                    {
+                                        <article class="animate-box">
+                                            <div class="blog-img">
+                                                <div class="video colorlib-video" style="background-image: url(/araclar/images/@ktghaber.resim);">
+                                                    <a href="@ktghaber.video" class="popup-vimeo"><i class="icon-play4"></i></a>
+                                                    <div class="overlay"></div>
+                                                </div>
+                                            </div>
+                                            <div class="desc">
+                                                <div class="meta">
+                                                    <p>
+                                                        <span>Video</span>
+                                                        <span>@ktghaber.tarih</span>
+                                                        <span>Tıklanma: @ktghaber.tiklanma</span>
+                                                    </p>
+                                                </div>
+                                                <h2><a href="single.html">@ktghaber.baslik</a></h2>
+                                                <p>@ktghaber.icerik</p>
+                                                <p><a href="/Anasayfa/HaberDetay?haberid=@ktghaber.h_spor_id&ktgr=Spor" class="btn btn-primary with-arrow">Devamını Oku <i class="icon-arrow-right22"></i></a></p>
+                                            </div>
+                                        </article>
+                                    }
+                                    else
+                                    {
+                                        <article class="animate-box">
+                                            <div class="blog-img" style="background-image: url(/araclar/images/@ktghaber.resim);"></div>
+                                            <div class="desc">
+                                                <div class="meta">
+                                                    <p>
+                                                        <span>Haber</span>
+                                                        <span>@ktghaber.tarih</span>
+                                                        <span>Tıklanma: @ktghaber.tiklanma</span>
+                                                    </p>
+                                                </div>
+                                                <h2><a href="single.html">@ktghaber.baslik</a></h2>
+                                                <p>@ktghaber.icerik</p>
+                                                <p><a href="/Anasayfa/HaberDetay?haberid=@ktghaber.h_spor_id&ktgr=Spor" class="btn btn-primary with-arrow">Devamını Oku<i class="icon-arrow-right22"></i></a></p>
+                                            </div>
+                                        </article>
+                                    }
+                                }
+                            }
+                            @if (ViewData["kategoriid"].ToString() == "4")
+                            {
+
+                                foreach (var ktghaber in Model.csHaberlerDoga)
+                                {
+                                    if (ktghaber.video != null && ktghaber.video != "")
+                                    {
+                                        <article class="animate-box">
+                                            <div class="blog-img">
+                                                <div class="video colorlib-video" style="background-image: url(/araclar/images/@ktghaber.resim);">
+                                                    <a href="@ktghaber.video" class="popup-vimeo"><i class="icon-play4"></i></a>
+                                                    <div class="overlay"></div>
+                                                </div>
+                                            </div>
+                                            <div class="desc">
+                                                <div class="meta">
+                                                    <p>
+                                                        <span>Video</span>
+                                                        <span>@ktghaber.tarih</span>
+                                                        <span>Tıklanma: @ktghaber.tiklanma</span>
+                                                    </p>
+                                                </div>
+                                                <h2><a href="single.html">@ktghaber.baslik</a></h2>
+                                                <p>@ktghaber.icerik</p>
+                                                <p><a href="/Anasayfa/HaberDetay?haberid=@ktghaber.h_doga_id&ktgr=Doga" class="btn btn-primary with-arrow">Devamını Oku <i class="icon-arrow-right22"></i></a></p>
+                                            </div>
+                                        </article>
+                                    }
+                                    else
+                                    {
+                                        <article class="animate-box">
+                                            <div class="blog-img" style="background-image: url(/araclar/images/@ktghaber.resim);"></div>
+                                            <div class="desc">
+                                                <div class="meta">
+                                                    <p>
+                                                        <span>Haber</span>
+                                                        <span>@ktghaber.tarih</span>
+                                                        <span>Tıklanma: @ktghaber.tiklanma</span>
+                                                    </p>
+                                                </div>
+                                                <h2><a href="single.html">@ktghaber.baslik</a></h2>
+                                                <p>@ktghaber.icerik</p>
+                                                <p><a href="/Anasayfa/HaberDetay?haberid=@ktghaber.h_doga_id&ktgr=Doga" class="btn btn-primary with-arrow">Devamını Oku<i class="icon-arrow-right22"></i></a></p>
+                                            </div>
+                                        </article>
+                                    }
+                                }
+                            }
+                            @if (ViewData["kategoriid"].ToString() == "5")
+                            {
+
+                                foreach (var ktghaber in Model.csHaberlerTeknoloji)
+                                {
+                                    if (ktghaber.video != null && ktghaber.video != "")
+                                    {
+                                        <article class="animate-box">
+                                            <div class="blog-img">
+                                                <div class="video colorlib-video" style="background-image: url(/araclar/images/@ktghaber.resim);">
+                                                    <a href="@ktghaber.video" class="popup-vimeo"><i class="icon-play4"></i></a>
+                                                    <div class="overlay"></div>
+                                                </div>
+                                            </div>
+                                            <div class="desc">
+                                                <div class="meta">
+                                                    <p>
+                                                        <span>Video</span>
+                                                        <span>@ktghaber.tarih</span>
+                                                        <span>Tıklanma: @ktghaber.tiklanma</span>
+                                                    </p>
+                                                </div>
+                                                <h2><a href="single.html">@ktghaber.baslik</a></h2>
+                                                <p>@ktghaber.icerik</p>
+                                                <p><a href="/Anasayfa/HaberDetay?haberid=@ktghaber.h_teknoloji_id&ktgr=Teknoloji" class="btn btn-primary with-arrow">Devamını Oku <i class="icon-arrow-right22"></i></a></p>
+                                            </div>
+                                        </article>
+                                    }
+                                    else
+                                    {
+                                        <article class="animate-box">
+                                            <div class="blog-img" style="background-image: url(/araclar/images/@ktghaber.resim);"></div>
+                                            <div class="desc">
+                                                <div class="meta">
+                                                    <p>
+                                                        <span>Haber</span>
+                                                        <span>@ktghaber.tarih</span>
+                                                        <span>Tıklanma: @ktghaber.tiklanma</span>
+                                                    </p>
+                                                </div>
+                                                <h2><a href="single.html">@ktghaber.baslik</a></h2>
+                                                <p>@ktghaber.icerik</p>
+                                                <p><a href="/Anasayfa/HaberDetay?haberid=@ktghaber.h_teknoloji_id&ktgr=Teknoloji" class="btn btn-primary with-arrow">Devamını Oku<i class="icon-arrow-right22"></i></a></p>
+                                            </div>
+                                        </article>
+                                    }
+                                }
+                            }
+                            @if (ViewData["kategoriid"].ToString() == "6")
+                            {
+
+                                foreach (var ktghaber in Model.csHaberlerFilm)
+                                {
+                                    if (ktghaber.video != null && ktghaber.video != "")
+                                    {
+                                        <article class="animate-box">
+                                            <div class="blog-img">
+                                                <div class="video colorlib-video" style="background-image: url(/araclar/images/@ktghaber.resim);">
+                                                    <a href="@ktghaber.video" class="popup-vimeo"><i class="icon-play4"></i></a>
+                                                    <div class="overlay"></div>
+                                                </div>
+                                            </div>
+                                            <div class="desc">
+                                                <div class="meta">
+                                                    <p>
+                                                        <span>Video</span>
+                                                        <span>@ktghaber.tarih</span>
+                                                        <span>Tıklanma: @ktghaber.tiklanma</span>
+                                                    </p>
+                                                </div>
+                                                <h2><a href="single.html">@ktghaber.baslik</a></h2>
+                                                <p>@ktghaber.icerik</p>
+                                                <p><a href="/Anasayfa/HaberDetay?haberid=@ktghaber.h_film_id&ktgr=Film" class="btn btn-primary with-arrow">Devamını Oku <i class="icon-arrow-right22"></i></a></p>
+                                            </div>
+                                        </article>
+                                    }
+                                    else
+                                    {
+                                        <article class="animate-box">
+                                            <div class="blog-img" style="background-image: url(/araclar/images/@ktghaber.resim);"></div>
+                                            <div class="desc">
+                                                <div class="meta">
+                                                    <p>
+                                                        <span>Haber</span>
+                                                        <span>@ktghaber.tarih</span>
+                                                        <span>Tıklanma: @ktghaber.tiklanma</span>
+                                                    </p>
+                                                </div>
+                                                <h2><a href="single.html">@ktghaber.baslik</a></h2>
+                                                <p>@ktghaber.icerik</p>
+                                                <p><a href="/Anasayfa/HaberDetay?haberid=@ktghaber.h_film_id&ktgr=Film" class="btn btn-primary with-arrow">Devamını Oku<i class="icon-arrow-right22"></i></a></p>
+                                            </div>
+                                        </article>
+                                    }
+                                }
+                            }
+                            <!--    ----------------------Haber Sayfaları Kontrolü----------------------    -->
+                            <!--    ----------------------Sayfa Sonu Butonları----------------------    -->
+                        <div class="row">
+                            <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+                                <ul class="pagination" style="padding-left:500px;padding-right:500px;">
+                                    <li><a href="#"><hr class="fa-pagelines" />Başa Dön<hr class="fa-pagelines" /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                            <!--    ----------------------Sayfa Sonu Butonları----------------------    -->
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 sticky-parent">
+                        <div class="sidebar" id="sticky_item">
+
+                            <!--    ----------------------Arama----------------------    -->
+                            <div class="side animate-box">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="search" placeholder="Ne Aramıştınız...">
+                                    <button type="submit" class="btn submit btn-primary"><i class="icon-search3"></i></button>
+                                </div>
+                            </div>
+                            <!--    ----------------------Arama----------------------    -->
+                            <!--    ----------------------Sağ Scroll Kategoriler----------------------    -->
+                            <div class="side animate-box">
+                                <h2 class="sidebar-heading">Kategoriler</h2>
+                                <p>
+                                    <ul class="category">
+                                        <li><a>@Html.ActionLink("Anasayfa", "Index", "Anasayfa")</a></li>
+                                        @foreach (var kategori in Model.csKategoriler)
+                                        {
+                                            <li><a href="/Anasayfa/KategoriOnizleme/@kategori.kategori_id">@kategori.kategori</a></li>
+                                        }
+                                    </ul>
+                                </p>
+                            </div>
+                            <!--    ----------------------Sağ Scroll Kategoriler----------------------    -->
+
+                        </div>
+
+                        <!--   ---------------Sağ Scroll---------------   -->
+                        <div style="margin-top:1000px;"></div>
+                        <div class="side animate-box">
+                            <h2 class="sidebar-heading"></h2>
+                            <div class="instagram-entry">
+                            </div>
+                        </div>
+                        <!--   ---------------Sağ Scroll---------------   -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

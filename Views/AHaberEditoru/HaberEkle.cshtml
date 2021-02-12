@@ -1,0 +1,54 @@
+﻿@model Megazinde.Models.Siniflar.adminClass
+@{
+    ViewBag.Title = "HaberEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<center><label style="font-style:italic;font-size:20pt; color:darkcyan">Yeni Haber Ekle</label></center>
+<div>
+    <center>
+        <table class="table table-bordered" style="background-color:darkcyan;height:3px; width:1000px;"></table>
+    </center>
+
+</div>
+<br />
+<br />
+
+<form class="form-group" method="post">
+
+    <div class="form-group"><input type="text" class="form-control" name="baslik" placeholder="Haberin başlığını yazınız..." required /><br /></div>
+    <div class="form-group"><label>İÇERİK 1:</label><br /><textarea name="icerik" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin ilk içeriğini yazınız..." required></textarea><br /></div>
+    <div class="form-group"><label>İÇERİK 2:</label><br /><textarea name="icerik1" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin orta içeriğini yazınız..." required></textarea><br /></div>
+    <div class="form-group"><label>İÇERİK 3:</label><br /><textarea name="icerik2" id="message" cols="30" rows="10" class="form-control" placeholder="Haberin son içeriğini yazınız..." required></textarea><br /></div>
+
+    <div class="form-group">
+        <label>KATEGORİ:</label><br />
+        <select name="Kategoriler_kategori_id" class="form-control">
+            @foreach (var item in Model.csKategoriler)
+            {
+                <option value="@item.kategori_id">@item.kategori</option>
+            }
+        </select>
+        <!--Html.DropDownListFor(m => m.kategori,(List<SelectListItem>)ViewBag.veriler,new { class = "form-control" })-->
+    </div>
+
+    <div class="form-group"><label>RESİM:</label><br /><input type="text" class="form-control" name="resim" required /><br /></div>
+    <div class="form-group"><label>VİDEO LİNKİ:</label><br /><input type="text" class="form-control" name="video"  /><br /></div>
+    <br />
+    <div class="form-group"><center><input type="submit" value="> HABER EKLE <" class="btn btn-info" /></center></div>
+
+</form>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
