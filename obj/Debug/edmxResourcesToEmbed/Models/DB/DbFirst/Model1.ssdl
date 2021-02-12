@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbMegazindeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Duyurulars">
+    <Key>
+      <PropertyRef Name="duyuru_id" />
+    </Key>
+    <Property Name="duyuru_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="baslik" Type="nvarchar(max)" />
+    <Property Name="icerik" Type="nvarchar(max)" />
+    <Property Name="tarih" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="HaberlerDogas">
+    <Key>
+      <PropertyRef Name="h_doga_id" />
+    </Key>
+    <Property Name="h_doga_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="baslik" Type="nvarchar(max)" />
+    <Property Name="icerik" Type="nvarchar(max)" />
+    <Property Name="icerik1" Type="nvarchar(max)" />
+    <Property Name="icerik2" Type="nvarchar(max)" />
+    <Property Name="resim" Type="nvarchar(max)" />
+    <Property Name="video" Type="nvarchar(max)" />
+    <Property Name="tarih" Type="nvarchar(max)" />
+    <Property Name="tiklanma" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HaberlerFilms">
+    <Key>
+      <PropertyRef Name="h_film_id" />
+    </Key>
+    <Property Name="h_film_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="baslik" Type="nvarchar(max)" />
+    <Property Name="icerik" Type="nvarchar(max)" />
+    <Property Name="icerik1" Type="nvarchar(max)" />
+    <Property Name="icerik2" Type="nvarchar(max)" />
+    <Property Name="resim" Type="nvarchar(max)" />
+    <Property Name="video" Type="nvarchar(max)" />
+    <Property Name="tarih" Type="nvarchar(max)" />
+    <Property Name="tiklanma" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HaberlerIndexes">
+    <Key>
+      <PropertyRef Name="h_index_id" />
+    </Key>
+    <Property Name="h_index_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="baslik" Type="nvarchar(max)" />
+    <Property Name="icerik" Type="nvarchar(max)" />
+    <Property Name="resim" Type="nvarchar(max)" />
+    <Property Name="Kategoriler_kategori_id" Type="int" />
+  </EntityType>
+  <EntityType Name="HaberlerModas">
+    <Key>
+      <PropertyRef Name="h_moda_id" />
+    </Key>
+    <Property Name="h_moda_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="baslik" Type="nvarchar(max)" />
+    <Property Name="icerik" Type="nvarchar(max)" />
+    <Property Name="icerik1" Type="nvarchar(max)" />
+    <Property Name="icerik2" Type="nvarchar(max)" />
+    <Property Name="resim" Type="nvarchar(max)" />
+    <Property Name="video" Type="nvarchar(max)" />
+    <Property Name="tarih" Type="nvarchar(max)" />
+    <Property Name="tiklanma" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Haberlers">
+    <Key>
+      <PropertyRef Name="h_id" />
+    </Key>
+    <Property Name="h_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="baslik" Type="nvarchar(max)" />
+    <Property Name="icerik" Type="nvarchar(max)" />
+    <Property Name="Kategoriler_kategori_id" Type="int" />
+    <Property Name="resim" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="HaberlerSeyahats">
+    <Key>
+      <PropertyRef Name="h_seyahat_id" />
+    </Key>
+    <Property Name="h_seyahat_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="baslik" Type="nvarchar(max)" />
+    <Property Name="icerik" Type="nvarchar(max)" />
+    <Property Name="icerik1" Type="nvarchar(max)" />
+    <Property Name="icerik2" Type="nvarchar(max)" />
+    <Property Name="resim" Type="nvarchar(max)" />
+    <Property Name="video" Type="nvarchar(max)" />
+    <Property Name="tarih" Type="nvarchar(max)" />
+    <Property Name="tiklanma" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HaberlerSpors">
+    <Key>
+      <PropertyRef Name="h_spor_id" />
+    </Key>
+    <Property Name="h_spor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="baslik" Type="nvarchar(max)" />
+    <Property Name="icerik" Type="nvarchar(max)" />
+    <Property Name="icerik1" Type="nvarchar(max)" />
+    <Property Name="icerik2" Type="nvarchar(max)" />
+    <Property Name="resim" Type="nvarchar(max)" />
+    <Property Name="video" Type="nvarchar(max)" />
+    <Property Name="tarih" Type="nvarchar(max)" />
+    <Property Name="tiklanma" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HaberlerTeknolojis">
+    <Key>
+      <PropertyRef Name="h_teknoloji_id" />
+    </Key>
+    <Property Name="h_teknoloji_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="baslik" Type="nvarchar(max)" />
+    <Property Name="icerik" Type="nvarchar(max)" />
+    <Property Name="icerik1" Type="nvarchar(max)" />
+    <Property Name="icerik2" Type="nvarchar(max)" />
+    <Property Name="resim" Type="nvarchar(max)" />
+    <Property Name="video" Type="nvarchar(max)" />
+    <Property Name="tarih" Type="nvarchar(max)" />
+    <Property Name="tiklanma" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Heads">
+    <Key>
+      <PropertyRef Name="head_id" />
+    </Key>
+    <Property Name="head_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="baslik" Type="nvarchar(max)" />
+    <Property Name="icerik" Type="nvarchar(max)" />
+    <Property Name="resim" Type="nvarchar(max)" />
+    <Property Name="Kategoriler_kategori_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Kategorilers">
+    <Key>
+      <PropertyRef Name="kategori_id" />
+    </Key>
+    <Property Name="kategori_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kategori" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Kullanicilars">
+    <Key>
+      <PropertyRef Name="kullaniciadi" />
+    </Key>
+    <Property Name="kullaniciadi" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="parola" Type="nvarchar(max)" />
+    <Property Name="ad" Type="nvarchar(max)" />
+    <Property Name="soyad" Type="nvarchar(max)" />
+    <Property Name="resim" Type="nvarchar(max)" />
+    <Property Name="admin" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Yorumlars">
+    <Key>
+      <PropertyRef Name="yorum_id" />
+    </Key>
+    <Property Name="yorum_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yorum" Type="nvarchar(max)" />
+    <Property Name="tarih" Type="nvarchar(max)" />
+    <Property Name="Haberler_h_id" Type="int" />
+    <Property Name="Kategoriler_kategori_id" Type="int" />
+    <Property Name="Kullanicilar_kullaniciadi" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <Association Name="FK_dbo_HaberlerIndexes_dbo_Kategorilers_Kategoriler_kategori_id">
+    <End Role="Kategorilers" Type="Self.Kategorilers" Multiplicity="0..1" />
+    <End Role="HaberlerIndexes" Type="Self.HaberlerIndexes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategorilers">
+        <PropertyRef Name="kategori_id" />
+      </Principal>
+      <Dependent Role="HaberlerIndexes">
+        <PropertyRef Name="Kategoriler_kategori_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Haberlers_dbo_Kategorilers_Kategoriler_kategori_id">
+    <End Role="Kategorilers" Type="Self.Kategorilers" Multiplicity="0..1" />
+    <End Role="Haberlers" Type="Self.Haberlers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategorilers">
+        <PropertyRef Name="kategori_id" />
+      </Principal>
+      <Dependent Role="Haberlers">
+        <PropertyRef Name="Kategoriler_kategori_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Heads_dbo_Kategorilers_Kategoriler_kategori_id">
+    <End Role="Kategorilers" Type="Self.Kategorilers" Multiplicity="0..1" />
+    <End Role="Heads" Type="Self.Heads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategorilers">
+        <PropertyRef Name="kategori_id" />
+      </Principal>
+      <Dependent Role="Heads">
+        <PropertyRef Name="Kategoriler_kategori_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Yorumlars_dbo_Haberlers_Haberler_h_id">
+    <End Role="Haberlers" Type="Self.Haberlers" Multiplicity="0..1" />
+    <End Role="Yorumlars" Type="Self.Yorumlars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Haberlers">
+        <PropertyRef Name="h_id" />
+      </Principal>
+      <Dependent Role="Yorumlars">
+        <PropertyRef Name="Haberler_h_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Yorumlars_dbo_Kategorilers_Kategoriler_kategori_id">
+    <End Role="Kategorilers" Type="Self.Kategorilers" Multiplicity="0..1" />
+    <End Role="Yorumlars" Type="Self.Yorumlars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategorilers">
+        <PropertyRef Name="kategori_id" />
+      </Principal>
+      <Dependent Role="Yorumlars">
+        <PropertyRef Name="Kategoriler_kategori_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Yorumlars_dbo_Kullanicilars_Kullanicilar_kullaniciadi">
+    <End Role="Kullanicilars" Type="Self.Kullanicilars" Multiplicity="0..1" />
+    <End Role="Yorumlars" Type="Self.Yorumlars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilars">
+        <PropertyRef Name="kullaniciadi" />
+      </Principal>
+      <Dependent Role="Yorumlars">
+        <PropertyRef Name="Kullanicilar_kullaniciadi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbMegazindeModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Duyurulars" EntityType="Self.Duyurulars" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HaberlerDogas" EntityType="Self.HaberlerDogas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HaberlerFilms" EntityType="Self.HaberlerFilms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HaberlerIndexes" EntityType="Self.HaberlerIndexes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HaberlerModas" EntityType="Self.HaberlerModas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Haberlers" EntityType="Self.Haberlers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HaberlerSeyahats" EntityType="Self.HaberlerSeyahats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HaberlerSpors" EntityType="Self.HaberlerSpors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HaberlerTeknolojis" EntityType="Self.HaberlerTeknolojis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Heads" EntityType="Self.Heads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kategorilers" EntityType="Self.Kategorilers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanicilars" EntityType="Self.Kullanicilars" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yorumlars" EntityType="Self.Yorumlars" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_HaberlerIndexes_dbo_Kategorilers_Kategoriler_kategori_id" Association="Self.FK_dbo_HaberlerIndexes_dbo_Kategorilers_Kategoriler_kategori_id">
+      <End Role="Kategorilers" EntitySet="Kategorilers" />
+      <End Role="HaberlerIndexes" EntitySet="HaberlerIndexes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Haberlers_dbo_Kategorilers_Kategoriler_kategori_id" Association="Self.FK_dbo_Haberlers_dbo_Kategorilers_Kategoriler_kategori_id">
+      <End Role="Kategorilers" EntitySet="Kategorilers" />
+      <End Role="Haberlers" EntitySet="Haberlers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Heads_dbo_Kategorilers_Kategoriler_kategori_id" Association="Self.FK_dbo_Heads_dbo_Kategorilers_Kategoriler_kategori_id">
+      <End Role="Kategorilers" EntitySet="Kategorilers" />
+      <End Role="Heads" EntitySet="Heads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Yorumlars_dbo_Haberlers_Haberler_h_id" Association="Self.FK_dbo_Yorumlars_dbo_Haberlers_Haberler_h_id">
+      <End Role="Haberlers" EntitySet="Haberlers" />
+      <End Role="Yorumlars" EntitySet="Yorumlars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Yorumlars_dbo_Kategorilers_Kategoriler_kategori_id" Association="Self.FK_dbo_Yorumlars_dbo_Kategorilers_Kategoriler_kategori_id">
+      <End Role="Kategorilers" EntitySet="Kategorilers" />
+      <End Role="Yorumlars" EntitySet="Yorumlars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Yorumlars_dbo_Kullanicilars_Kullanicilar_kullaniciadi" Association="Self.FK_dbo_Yorumlars_dbo_Kullanicilars_Kullanicilar_kullaniciadi">
+      <End Role="Kullanicilars" EntitySet="Kullanicilars" />
+      <End Role="Yorumlars" EntitySet="Yorumlars" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

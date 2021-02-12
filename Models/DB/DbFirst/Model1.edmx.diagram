@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="269e89f65efc41708ddf18e692b37f55" Name="Diagram1">
+        <EntityTypeShape EntityType="DbMegazindeModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbMegazindeModel.Duyurulars" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbMegazindeModel.HaberlerDogas" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbMegazindeModel.HaberlerFilms" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbMegazindeModel.HaberlerIndexes" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbMegazindeModel.HaberlerModas" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbMegazindeModel.Haberlers" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbMegazindeModel.HaberlerSeyahats" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbMegazindeModel.HaberlerSpors" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbMegazindeModel.HaberlerTeknolojis" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbMegazindeModel.Heads" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbMegazindeModel.Kategorilers" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbMegazindeModel.Kullanicilars" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbMegazindeModel.sysdiagrams" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbMegazindeModel.Yorumlars" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="DbMegazindeModel.FK_dbo_HaberlerIndexes_dbo_Kategorilers_Kategoriler_kategori_id" ManuallyRouted="false" />
+        <AssociationConnector Association="DbMegazindeModel.FK_dbo_Haberlers_dbo_Kategorilers_Kategoriler_kategori_id" ManuallyRouted="false" />
+        <AssociationConnector Association="DbMegazindeModel.FK_dbo_Yorumlars_dbo_Haberlers_Haberler_h_id" ManuallyRouted="false" />
+        <AssociationConnector Association="DbMegazindeModel.FK_dbo_Heads_dbo_Kategorilers_Kategoriler_kategori_id" ManuallyRouted="false" />
+        <AssociationConnector Association="DbMegazindeModel.FK_dbo_Yorumlars_dbo_Kategorilers_Kategoriler_kategori_id" ManuallyRouted="false" />
+        <AssociationConnector Association="DbMegazindeModel.FK_dbo_Yorumlars_dbo_Kullanicilars_Kullanicilar_kullaniciadi" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

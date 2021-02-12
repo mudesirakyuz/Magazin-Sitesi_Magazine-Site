@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbMegazindeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Duyurulars">
+    <Key>
+      <PropertyRef Name="duyuru_id" />
+    </Key>
+    <Property Name="duyuru_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tarih" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HaberlerDogas">
+    <Key>
+      <PropertyRef Name="h_doga_id" />
+    </Key>
+    <Property Name="h_doga_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="video" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tarih" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tiklanma" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HaberlerFilms">
+    <Key>
+      <PropertyRef Name="h_film_id" />
+    </Key>
+    <Property Name="h_film_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="video" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tarih" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tiklanma" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HaberlerIndexes">
+    <Key>
+      <PropertyRef Name="h_index_id" />
+    </Key>
+    <Property Name="h_index_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Kategoriler_kategori_id" Type="Int32" />
+    <NavigationProperty Name="Kategorilers" Relationship="Self.FK_dbo_HaberlerIndexes_dbo_Kategorilers_Kategoriler_kategori_id" FromRole="HaberlerIndexes" ToRole="Kategorilers" />
+  </EntityType>
+  <EntityType Name="HaberlerModas">
+    <Key>
+      <PropertyRef Name="h_moda_id" />
+    </Key>
+    <Property Name="h_moda_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="video" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tarih" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tiklanma" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Haberlers">
+    <Key>
+      <PropertyRef Name="h_id" />
+    </Key>
+    <Property Name="h_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Kategoriler_kategori_id" Type="Int32" />
+    <Property Name="resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Kategorilers" Relationship="Self.FK_dbo_Haberlers_dbo_Kategorilers_Kategoriler_kategori_id" FromRole="Haberlers" ToRole="Kategorilers" />
+    <NavigationProperty Name="Yorumlars" Relationship="Self.FK_dbo_Yorumlars_dbo_Haberlers_Haberler_h_id" FromRole="Haberlers" ToRole="Yorumlars" />
+  </EntityType>
+  <EntityType Name="HaberlerSeyahats">
+    <Key>
+      <PropertyRef Name="h_seyahat_id" />
+    </Key>
+    <Property Name="h_seyahat_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="video" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tarih" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tiklanma" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HaberlerSpors">
+    <Key>
+      <PropertyRef Name="h_spor_id" />
+    </Key>
+    <Property Name="h_spor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="video" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tarih" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tiklanma" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HaberlerTeknolojis">
+    <Key>
+      <PropertyRef Name="h_teknoloji_id" />
+    </Key>
+    <Property Name="h_teknoloji_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="video" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tarih" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tiklanma" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Heads">
+    <Key>
+      <PropertyRef Name="head_id" />
+    </Key>
+    <Property Name="head_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Kategoriler_kategori_id" Type="Int32" />
+    <NavigationProperty Name="Kategorilers" Relationship="Self.FK_dbo_Heads_dbo_Kategorilers_Kategoriler_kategori_id" FromRole="Heads" ToRole="Kategorilers" />
+  </EntityType>
+  <EntityType Name="Kategorilers">
+    <Key>
+      <PropertyRef Name="kategori_id" />
+    </Key>
+    <Property Name="kategori_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kategori" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HaberlerIndexes" Relationship="Self.FK_dbo_HaberlerIndexes_dbo_Kategorilers_Kategoriler_kategori_id" FromRole="Kategorilers" ToRole="HaberlerIndexes" />
+    <NavigationProperty Name="Haberlers" Relationship="Self.FK_dbo_Haberlers_dbo_Kategorilers_Kategoriler_kategori_id" FromRole="Kategorilers" ToRole="Haberlers" />
+    <NavigationProperty Name="Heads" Relationship="Self.FK_dbo_Heads_dbo_Kategorilers_Kategoriler_kategori_id" FromRole="Kategorilers" ToRole="Heads" />
+    <NavigationProperty Name="Yorumlars" Relationship="Self.FK_dbo_Yorumlars_dbo_Kategorilers_Kategoriler_kategori_id" FromRole="Kategorilers" ToRole="Yorumlars" />
+  </EntityType>
+  <EntityType Name="Kullanicilars">
+    <Key>
+      <PropertyRef Name="kullaniciadi" />
+    </Key>
+    <Property Name="kullaniciadi" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="parola" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="soyad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="admin" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Yorumlars" Relationship="Self.FK_dbo_Yorumlars_dbo_Kullanicilars_Kullanicilar_kullaniciadi" FromRole="Kullanicilars" ToRole="Yorumlars" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Yorumlars">
+    <Key>
+      <PropertyRef Name="yorum_id" />
+    </Key>
+    <Property Name="yorum_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yorum" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tarih" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Haberler_h_id" Type="Int32" />
+    <Property Name="Kategoriler_kategori_id" Type="Int32" />
+    <Property Name="Kullanicilar_kullaniciadi" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Haberlers" Relationship="Self.FK_dbo_Yorumlars_dbo_Haberlers_Haberler_h_id" FromRole="Yorumlars" ToRole="Haberlers" />
+    <NavigationProperty Name="Kategorilers" Relationship="Self.FK_dbo_Yorumlars_dbo_Kategorilers_Kategoriler_kategori_id" FromRole="Yorumlars" ToRole="Kategorilers" />
+    <NavigationProperty Name="Kullanicilars" Relationship="Self.FK_dbo_Yorumlars_dbo_Kullanicilars_Kullanicilar_kullaniciadi" FromRole="Yorumlars" ToRole="Kullanicilars" />
+  </EntityType>
+  <Association Name="FK_dbo_HaberlerIndexes_dbo_Kategorilers_Kategoriler_kategori_id">
+    <End Role="Kategorilers" Type="Self.Kategorilers" Multiplicity="0..1" />
+    <End Role="HaberlerIndexes" Type="Self.HaberlerIndexes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategorilers">
+        <PropertyRef Name="kategori_id" />
+      </Principal>
+      <Dependent Role="HaberlerIndexes">
+        <PropertyRef Name="Kategoriler_kategori_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Haberlers_dbo_Kategorilers_Kategoriler_kategori_id">
+    <End Role="Kategorilers" Type="Self.Kategorilers" Multiplicity="0..1" />
+    <End Role="Haberlers" Type="Self.Haberlers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategorilers">
+        <PropertyRef Name="kategori_id" />
+      </Principal>
+      <Dependent Role="Haberlers">
+        <PropertyRef Name="Kategoriler_kategori_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Yorumlars_dbo_Haberlers_Haberler_h_id">
+    <End Role="Haberlers" Type="Self.Haberlers" Multiplicity="0..1" />
+    <End Role="Yorumlars" Type="Self.Yorumlars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Haberlers">
+        <PropertyRef Name="h_id" />
+      </Principal>
+      <Dependent Role="Yorumlars">
+        <PropertyRef Name="Haberler_h_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Heads_dbo_Kategorilers_Kategoriler_kategori_id">
+    <End Role="Kategorilers" Type="Self.Kategorilers" Multiplicity="0..1" />
+    <End Role="Heads" Type="Self.Heads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategorilers">
+        <PropertyRef Name="kategori_id" />
+      </Principal>
+      <Dependent Role="Heads">
+        <PropertyRef Name="Kategoriler_kategori_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Yorumlars_dbo_Kategorilers_Kategoriler_kategori_id">
+    <End Role="Kategorilers" Type="Self.Kategorilers" Multiplicity="0..1" />
+    <End Role="Yorumlars" Type="Self.Yorumlars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategorilers">
+        <PropertyRef Name="kategori_id" />
+      </Principal>
+      <Dependent Role="Yorumlars">
+        <PropertyRef Name="Kategoriler_kategori_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Yorumlars_dbo_Kullanicilars_Kullanicilar_kullaniciadi">
+    <End Role="Kullanicilars" Type="Self.Kullanicilars" Multiplicity="0..1" />
+    <End Role="Yorumlars" Type="Self.Yorumlars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilars">
+        <PropertyRef Name="kullaniciadi" />
+      </Principal>
+      <Dependent Role="Yorumlars">
+        <PropertyRef Name="Kullanicilar_kullaniciadi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbMegazindeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="Duyurulars" EntityType="Self.Duyurulars" />
+    <EntitySet Name="HaberlerDogas" EntityType="Self.HaberlerDogas" />
+    <EntitySet Name="HaberlerFilms" EntityType="Self.HaberlerFilms" />
+    <EntitySet Name="HaberlerIndexes" EntityType="Self.HaberlerIndexes" />
+    <EntitySet Name="HaberlerModas" EntityType="Self.HaberlerModas" />
+    <EntitySet Name="Haberlers" EntityType="Self.Haberlers" />
+    <EntitySet Name="HaberlerSeyahats" EntityType="Self.HaberlerSeyahats" />
+    <EntitySet Name="HaberlerSpors" EntityType="Self.HaberlerSpors" />
+    <EntitySet Name="HaberlerTeknolojis" EntityType="Self.HaberlerTeknolojis" />
+    <EntitySet Name="Heads" EntityType="Self.Heads" />
+    <EntitySet Name="Kategorilers" EntityType="Self.Kategorilers" />
+    <EntitySet Name="Kullanicilars" EntityType="Self.Kullanicilars" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Yorumlars" EntityType="Self.Yorumlars" />
+    <AssociationSet Name="FK_dbo_HaberlerIndexes_dbo_Kategorilers_Kategoriler_kategori_id" Association="Self.FK_dbo_HaberlerIndexes_dbo_Kategorilers_Kategoriler_kategori_id">
+      <End Role="Kategorilers" EntitySet="Kategorilers" />
+      <End Role="HaberlerIndexes" EntitySet="HaberlerIndexes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Haberlers_dbo_Kategorilers_Kategoriler_kategori_id" Association="Self.FK_dbo_Haberlers_dbo_Kategorilers_Kategoriler_kategori_id">
+      <End Role="Kategorilers" EntitySet="Kategorilers" />
+      <End Role="Haberlers" EntitySet="Haberlers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Yorumlars_dbo_Haberlers_Haberler_h_id" Association="Self.FK_dbo_Yorumlars_dbo_Haberlers_Haberler_h_id">
+      <End Role="Haberlers" EntitySet="Haberlers" />
+      <End Role="Yorumlars" EntitySet="Yorumlars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Heads_dbo_Kategorilers_Kategoriler_kategori_id" Association="Self.FK_dbo_Heads_dbo_Kategorilers_Kategoriler_kategori_id">
+      <End Role="Kategorilers" EntitySet="Kategorilers" />
+      <End Role="Heads" EntitySet="Heads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Yorumlars_dbo_Kategorilers_Kategoriler_kategori_id" Association="Self.FK_dbo_Yorumlars_dbo_Kategorilers_Kategoriler_kategori_id">
+      <End Role="Kategorilers" EntitySet="Kategorilers" />
+      <End Role="Yorumlars" EntitySet="Yorumlars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Yorumlars_dbo_Kullanicilars_Kullanicilar_kullaniciadi" Association="Self.FK_dbo_Yorumlars_dbo_Kullanicilars_Kullanicilar_kullaniciadi">
+      <End Role="Kullanicilars" EntitySet="Kullanicilars" />
+      <End Role="Yorumlars" EntitySet="Yorumlars" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

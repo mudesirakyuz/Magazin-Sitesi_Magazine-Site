@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbMegazindeModelStoreContainer" CdmEntityContainer="DbMegazindeEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="DbMegazindeModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Duyurulars">
+      <EntityTypeMapping TypeName="DbMegazindeModel.Duyurulars">
+        <MappingFragment StoreEntitySet="Duyurulars">
+          <ScalarProperty Name="duyuru_id" ColumnName="duyuru_id" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HaberlerDogas">
+      <EntityTypeMapping TypeName="DbMegazindeModel.HaberlerDogas">
+        <MappingFragment StoreEntitySet="HaberlerDogas">
+          <ScalarProperty Name="h_doga_id" ColumnName="h_doga_id" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="icerik1" ColumnName="icerik1" />
+          <ScalarProperty Name="icerik2" ColumnName="icerik2" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="video" ColumnName="video" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="tiklanma" ColumnName="tiklanma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HaberlerFilms">
+      <EntityTypeMapping TypeName="DbMegazindeModel.HaberlerFilms">
+        <MappingFragment StoreEntitySet="HaberlerFilms">
+          <ScalarProperty Name="h_film_id" ColumnName="h_film_id" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="icerik1" ColumnName="icerik1" />
+          <ScalarProperty Name="icerik2" ColumnName="icerik2" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="video" ColumnName="video" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="tiklanma" ColumnName="tiklanma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HaberlerIndexes">
+      <EntityTypeMapping TypeName="DbMegazindeModel.HaberlerIndexes">
+        <MappingFragment StoreEntitySet="HaberlerIndexes">
+          <ScalarProperty Name="h_index_id" ColumnName="h_index_id" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="Kategoriler_kategori_id" ColumnName="Kategoriler_kategori_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HaberlerModas">
+      <EntityTypeMapping TypeName="DbMegazindeModel.HaberlerModas">
+        <MappingFragment StoreEntitySet="HaberlerModas">
+          <ScalarProperty Name="h_moda_id" ColumnName="h_moda_id" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="icerik1" ColumnName="icerik1" />
+          <ScalarProperty Name="icerik2" ColumnName="icerik2" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="video" ColumnName="video" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="tiklanma" ColumnName="tiklanma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Haberlers">
+      <EntityTypeMapping TypeName="DbMegazindeModel.Haberlers">
+        <MappingFragment StoreEntitySet="Haberlers">
+          <ScalarProperty Name="h_id" ColumnName="h_id" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="Kategoriler_kategori_id" ColumnName="Kategoriler_kategori_id" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HaberlerSeyahats">
+      <EntityTypeMapping TypeName="DbMegazindeModel.HaberlerSeyahats">
+        <MappingFragment StoreEntitySet="HaberlerSeyahats">
+          <ScalarProperty Name="h_seyahat_id" ColumnName="h_seyahat_id" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="icerik1" ColumnName="icerik1" />
+          <ScalarProperty Name="icerik2" ColumnName="icerik2" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="video" ColumnName="video" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="tiklanma" ColumnName="tiklanma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HaberlerSpors">
+      <EntityTypeMapping TypeName="DbMegazindeModel.HaberlerSpors">
+        <MappingFragment StoreEntitySet="HaberlerSpors">
+          <ScalarProperty Name="h_spor_id" ColumnName="h_spor_id" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="icerik1" ColumnName="icerik1" />
+          <ScalarProperty Name="icerik2" ColumnName="icerik2" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="video" ColumnName="video" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="tiklanma" ColumnName="tiklanma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HaberlerTeknolojis">
+      <EntityTypeMapping TypeName="DbMegazindeModel.HaberlerTeknolojis">
+        <MappingFragment StoreEntitySet="HaberlerTeknolojis">
+          <ScalarProperty Name="h_teknoloji_id" ColumnName="h_teknoloji_id" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="icerik1" ColumnName="icerik1" />
+          <ScalarProperty Name="icerik2" ColumnName="icerik2" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="video" ColumnName="video" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="tiklanma" ColumnName="tiklanma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Heads">
+      <EntityTypeMapping TypeName="DbMegazindeModel.Heads">
+        <MappingFragment StoreEntitySet="Heads">
+          <ScalarProperty Name="head_id" ColumnName="head_id" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="Kategoriler_kategori_id" ColumnName="Kategoriler_kategori_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kategorilers">
+      <EntityTypeMapping TypeName="DbMegazindeModel.Kategorilers">
+        <MappingFragment StoreEntitySet="Kategorilers">
+          <ScalarProperty Name="kategori_id" ColumnName="kategori_id" />
+          <ScalarProperty Name="kategori" ColumnName="kategori" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanicilars">
+      <EntityTypeMapping TypeName="DbMegazindeModel.Kullanicilars">
+        <MappingFragment StoreEntitySet="Kullanicilars">
+          <ScalarProperty Name="kullaniciadi" ColumnName="kullaniciadi" />
+          <ScalarProperty Name="parola" ColumnName="parola" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="admin" ColumnName="admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DbMegazindeModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yorumlars">
+      <EntityTypeMapping TypeName="DbMegazindeModel.Yorumlars">
+        <MappingFragment StoreEntitySet="Yorumlars">
+          <ScalarProperty Name="yorum_id" ColumnName="yorum_id" />
+          <ScalarProperty Name="yorum" ColumnName="yorum" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="Haberler_h_id" ColumnName="Haberler_h_id" />
+          <ScalarProperty Name="Kategoriler_kategori_id" ColumnName="Kategoriler_kategori_id" />
+          <ScalarProperty Name="Kullanicilar_kullaniciadi" ColumnName="Kullanicilar_kullaniciadi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
